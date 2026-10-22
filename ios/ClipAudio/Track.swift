@@ -48,21 +48,39 @@ struct YtDlpStreamSource: StreamSource {
     struct ResolveError: LocalizedError {
         let stage: String, detail: String
         var errorDescription: String? { detail }
-        /// Mapped to PRD §10's failure ladder so the UI can say what broke.
-        var userMessage: String {
+        private enum Kind {
+            case noFormat, engine, unavailable, signIn, region, network, unreadable, other
+        }
+        private var kind: Kind {
             switch stage {
-            case "NO_COMPATIBLE_FORMAT": return "No compatible audio format"
-            case "IMPORT", "BRIDGE":     return "Extraction engine problem"
+            case "NO_COMPATIBLE_FORMAT": return .noFormat
+            case "IMPORT", "BRIDGE":     return .engine
             case "EXTRACT":
                 let d = detail.lowercased()
-                if d.contains("private") || d.contains("unavailable") { return "Video unavailable" }
-                if d.contains("sign in") || d.contains("age")        { return "Sign-in required" }
-                if d.contains("geo")                                 { return "Not available in your region" }
-                if d.contains("timed out") || d.contains("urlopen")  { return "Network problem" }
-                return "Can't read this link"
-            default: return "Couldn't load this"
+                if d.contains("private") || d.contains("unavailable") { return .unavailable }
+                if d.contains("sign in") || d.contains("age")        { return .signIn }
+                if d.contains("geo")                                 { return .region }
+                if d.contains("timed out") || d.contains("urlopen")  { return .network }
+                return .unreadable
+            default: return .other
             }
         }
+        /// Mapped to PRD §10's failure ladder so the UI can say what broke.
+        var userMessage: String {
+            switch kind {
+            case .noFormat:    return "No compatible audio format"
+            case .engine:      return "Extraction engine problem"
+            case .unavailable: return "Video unavailable"
+            case .signIn:      return "Sign-in required"
+            case .region:      return "Not available in your region"
+            case .network:     return "Network problem"
+            case .unreadable:  return "Can't read this link"
+            case .other:       return "Couldn't load this"
+            }
+        }
+        /// True when retrying will not help: the item is gone or blocked for
+        /// this user. Transient problems (network, engine) are not definitive.
+        var isDefinitive: Bool { kind == .unavailable || kind == .region }
     }
 
     func resolve(_ sourceURL: String) async throws -> Track {

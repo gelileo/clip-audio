@@ -90,9 +90,12 @@ struct ResolvedMetadata: Equatable {
     let duration: Double?
     let artworkURL: String?
 
-    /// True when the resolve produced nothing worth showing.
-    var isEmpty: Bool {
-        title == nil && uploader == nil && duration == nil && artworkURL == nil
+    /// A resolve only counts as success if it gives the row a real title.
+    /// Without one the row would show its raw URL while marked "fetched",
+    /// with no path to retry. Whitespace-only counts as absent.
+    var hasUsableTitle: Bool {
+        guard let t = title else { return false }
+        return !t.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 }
 
@@ -107,12 +110,17 @@ extension PlaylistItem {
                   metadataFetchedAt: track.title == nil ? nil : Date())
     }
 
-    mutating func apply(_ m: ResolvedMetadata) {
+    /// Returns false (and changes nothing, in particular does not stamp
+    /// `metadataFetchedAt`) when `m` has no usable title.
+    @discardableResult
+    mutating func apply(_ m: ResolvedMetadata) -> Bool {
+        guard m.hasUsableTitle else { return false }
         title = m.title ?? title
         uploader = m.uploader ?? uploader
         duration = m.duration ?? duration
         artworkURL = m.artworkURL ?? artworkURL
         metadataFetchedAt = Date()
+        return true
     }
 }
 

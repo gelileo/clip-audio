@@ -165,12 +165,16 @@ final class PlaylistStore: ObservableObject {
 
     // MARK: - Metadata
 
-    func applyMetadata(_ m: ResolvedMetadata, toItemID itemID: UUID, in playlistID: UUID) {
+    /// Returns true only if the metadata was applied. False when the item is
+    /// gone (deleted mid-flight) or `m` has no usable title.
+    @discardableResult
+    func applyMetadata(_ m: ResolvedMetadata, toItemID itemID: UUID, in playlistID: UUID) -> Bool {
         guard let p = playlists.firstIndex(where: { $0.id == playlistID }),
               let i = playlists[p].items.firstIndex(where: { $0.id == itemID })
-        else { return }   // user deleted it mid-flight; nothing to do
-        playlists[p].items[i].apply(m)
+        else { return false }
+        guard playlists[p].items[i].apply(m) else { return false }
         scheduleSave()
+        return true
     }
 
     func recordMetadataFailure(itemID: UUID, in playlistID: UUID) {
