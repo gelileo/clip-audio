@@ -1,0 +1,19 @@
+{
+  "" : {
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/TmpUITests-primary.dia",
+    "emit-module-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/TmpUITests-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/TmpUITests-primary-emit-module.dia",
+    "pch" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/TmpUITests-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/TmpUITests-primary.swiftdeps"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/TmpUITests/PickerUITests.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/PickerUITests.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/PickerUITests.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/PickerUITests.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/PickerUITests.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/PickerUITests.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/PickerUITests.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/PickerUITests.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/TmpUITests.build/Objects-normal/arm64/PickerUITests~partial.swiftmodule"
+  }
+}

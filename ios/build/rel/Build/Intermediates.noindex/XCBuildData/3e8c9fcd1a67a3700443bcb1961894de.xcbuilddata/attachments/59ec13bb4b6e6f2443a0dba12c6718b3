@@ -1,0 +1,31 @@
+{
+  "" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary.dia",
+    "emit-module-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary-emit-module.dia",
+    "pch" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary.swiftdeps"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/ClipAudioApp.swift" : {
+    "index-unit-output-path" : "/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudioApp.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudioApp.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudioApp.o"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/M1HarnessView.swift" : {
+    "index-unit-output-path" : "/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/M1HarnessView.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/M1HarnessView.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/M1HarnessView.o"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/PythonRuntime.swift" : {
+    "index-unit-output-path" : "/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/PythonRuntime.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/PythonRuntime.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/PythonRuntime.o"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/SelfTest.swift" : {
+    "index-unit-output-path" : "/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/SelfTest.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/SelfTest.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/SelfTest.o"
+  }
+}

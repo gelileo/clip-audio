@@ -1,0 +1,12 @@
+{
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/ClipAudioApp.swift" : {
+    "abi-baseline-json" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio.abi.json",
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary.dia",
+    "objc-header" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio-Swift.h",
+    "swiftdoc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio.swiftdoc",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio.swiftmodule",
+    "swiftsourceinfo" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/rel/Build/Intermediates.noindex/ClipAudio.build/Release-iphoneos/ClipAudio.build/Objects-normal/arm64/ClipAudio.swiftsourceinfo"
+  }
+}

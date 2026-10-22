@@ -1,0 +1,679 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01682E7AE3373100727CFDD6 /* AddToPlaylistFeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56E04671A9CE4087BCD9099 /* AddToPlaylistFeedbackTests.swift */; };
+		04BB750C83B1FB35EBDC49F8 /* PlaybackProbe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116F0142F8CD11A01F4F588F /* PlaybackProbe.swift */; };
+		133E592EEF68E6F679EBE6E0 /* SelfTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5F6087D2ED00EF9B9E07DB /* SelfTest.swift */; };
+		1C0854ED9629A3C3D1139AF1 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518B23525FB1531D670E173 /* RootTabView.swift */; };
+		2D9870F3156C5D9A505748DA /* PlaylistPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078E1D2D1E7D3320361C832 /* PlaylistPickerView.swift */; };
+		2E0FDEEF8CB0F16DE6BD9A25 /* PlaylistRowStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982249DAFF07DEBDD1058D5D /* PlaylistRowStateTests.swift */; };
+		32EE068F3D0A3308694AFBD4 /* PlaylistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657FC07B1F0D72C89B77421 /* PlaylistsView.swift */; };
+		3B9F4D3DC6CE5F439A16735D /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0AA5915E24F45DC80697AE /* PlayerView.swift */; };
+		40878258870CB3B0FE039713 /* Python.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D258FB8D7D409353289CD18 /* Python.xcframework */; };
+		443A714EEE384E2526A83FBB /* PlaylistRowState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632C92DE81701CB07660DD6C /* PlaylistRowState.swift */; };
+		47DA4439C23600806DE568CC /* libregexp.c in Sources */ = {isa = PBXBuildFile; fileRef = 98208F0169A050635510E1F4 /* libregexp.c */; settings = {COMPILER_FLAGS = "-O2"; }; };
+		508544C282FFA1B43CB1217F /* MetadataBackfiller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B039B94724218786F914700 /* MetadataBackfiller.swift */; };
+		5A77BEC25705E2FB6254FE38 /* PlaylistModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B364AE6CECDF71FE01761D65 /* PlaylistModelTests.swift */; };
+		5C8AE79BB771E84F60D9077A /* PlaylistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79B8DF07804F994BC52FB99 /* PlaylistDetailView.swift */; };
+		5C9ABCFEF56DDDB82843805B /* PlaylistStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA7FF3E6D7E6D1B6E9E6B85 /* PlaylistStoreTests.swift */; };
+		61887729344F9FBE08FD0FB2 /* DebugSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5150C29D2D323FA464FBF6C /* DebugSettings.swift */; };
+		6D72EB93B303D37A6202BCA0 /* app_packages in Resources */ = {isa = PBXBuildFile; fileRef = F5981CB552C7C0D00E3F26D8 /* app_packages */; };
+		726785EFC7178A30C89EDA25 /* PlaylistStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB6DF85D4CF20D27ED6A684 /* PlaylistStore.swift */; };
+		831FC99BE84E37DC11FB19FF /* MetadataBackfillerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760D3CE96FF67A2266FA5EBD /* MetadataBackfillerTests.swift */; };
+		83DC90AEED73A35365E528EA /* dtoa.c in Sources */ = {isa = PBXBuildFile; fileRef = A5AD1390D9CC76B708341634 /* dtoa.c */; settings = {COMPILER_FLAGS = "-O2"; }; };
+		8886B9CE6B73C006579ACE48 /* qjs_module.c in Sources */ = {isa = PBXBuildFile; fileRef = 718D1465D8D829992DE573E8 /* qjs_module.c */; };
+		88A42660B3645A25F8962BBD /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F49FF86CD3ED6CC87168C /* AudioPlayer.swift */; };
+		8C0473A657E5F4C9234DFE74 /* Python.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D258FB8D7D409353289CD18 /* Python.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A061B49C235BFD4142D91AA7 /* libunicode.c in Sources */ = {isa = PBXBuildFile; fileRef = DA202F76116556EE1B0D1611 /* libunicode.c */; settings = {COMPILER_FLAGS = "-O2"; }; };
+		A1866DBC6800BE7E5EE9DCCD /* PlayerProbe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D2BC759825F90E09F6CE41 /* PlayerProbe.swift */; };
+		A5127B9E8FF03B73E781D898 /* quickjs.c in Sources */ = {isa = PBXBuildFile; fileRef = A805710C4F7EFCB5F3C80B86 /* quickjs.c */; settings = {COMPILER_FLAGS = "-O2"; }; };
+		A9DF27E004356C29419C7880 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = F017EA7C306BB3253FB7EA66 /* Track.swift */; };
+		AA6BC13E9BEC8FF40F5FEBD4 /* M1HarnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA48E8D06C1EE1114B27E6 /* M1HarnessView.swift */; };
+		C831A01A6791D31F09398D91 /* app in Resources */ = {isa = PBXBuildFile; fileRef = 4E32CC8619520873BA53A6C6 /* app */; };
+		D525DBC3616E98230106C4B6 /* ClipAudioPython.c in Sources */ = {isa = PBXBuildFile; fileRef = 808632FABCA312BCB7BC32FB /* ClipAudioPython.c */; };
+		D870E5E24F2F6D037B28312F /* ClipAudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB2765A3346ED3C91EA9C78 /* ClipAudioApp.swift */; };
+		D9D2489E6678E5DFA0DEF0D6 /* PlaylistStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7D15E94173577A95C06AF2 /* PlaylistStorageTests.swift */; };
+		DD7D5C6F58A7D1721C839DAB /* AudioPlayerPlaylistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EBD306BC468B259C8EF4B /* AudioPlayerPlaylistTests.swift */; };
+		E49D0AB0977CDA078B288F87 /* PythonRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2866B335889B428203277AEB /* PythonRuntime.swift */; };
+		F0441EB6DC7A35DB5CBFBA8D /* PlaylistStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D43C1658B91BB1936F1D00 /* PlaylistStorage.swift */; };
+		FF4BE1D76037A0D9999BDE41 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F1915EDA23F980E96A1D7 /* Playlist.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A783A79FD381A5A7FFB6341B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79A1D06038A07FB808D7CEF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B97615100295458CF35F6C5;
+			remoteInfo = ClipAudio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		376D5E026C594667FCE7DFB8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8C0473A657E5F4C9234DFE74 /* Python.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		116F0142F8CD11A01F4F588F /* PlaybackProbe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackProbe.swift; sourceTree = "<group>"; };
+		1529A5B9EAB6904E7609A013 /* ClipAudioTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ClipAudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C7D15E94173577A95C06AF2 /* PlaylistStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistStorageTests.swift; sourceTree = "<group>"; };
+		1D6F49FF86CD3ED6CC87168C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		2866B335889B428203277AEB /* PythonRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythonRuntime.swift; sourceTree = "<group>"; };
+		31D2BC759825F90E09F6CE41 /* PlayerProbe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProbe.swift; sourceTree = "<group>"; };
+		4657FC07B1F0D72C89B77421 /* PlaylistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsView.swift; sourceTree = "<group>"; };
+		4E32CC8619520873BA53A6C6 /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = SOURCE_ROOT; };
+		53990A06CB4C359A6E0E34E6 /* ClipAudio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClipAudio-Bridging-Header.h"; sourceTree = "<group>"; };
+		5F42AC67CAC6180BB3F9B4E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		632C92DE81701CB07660DD6C /* PlaylistRowState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistRowState.swift; sourceTree = "<group>"; };
+		6518B23525FB1531D670E173 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		718D1465D8D829992DE573E8 /* qjs_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = qjs_module.c; sourceTree = "<group>"; };
+		760D3CE96FF67A2266FA5EBD /* MetadataBackfillerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataBackfillerTests.swift; sourceTree = "<group>"; };
+		808632FABCA312BCB7BC32FB /* ClipAudioPython.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ClipAudioPython.c; sourceTree = "<group>"; };
+		85EB1B3964B78915D07F5A46 /* ClipAudioPython.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClipAudioPython.h; sourceTree = "<group>"; };
+		8D258FB8D7D409353289CD18 /* Python.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Python.xcframework; path = Support/Python.xcframework; sourceTree = "<group>"; };
+		98208F0169A050635510E1F4 /* libregexp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libregexp.c; sourceTree = "<group>"; };
+		982249DAFF07DEBDD1058D5D /* PlaylistRowStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistRowStateTests.swift; sourceTree = "<group>"; };
+		9B039B94724218786F914700 /* MetadataBackfiller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataBackfiller.swift; sourceTree = "<group>"; };
+		A078E1D2D1E7D3320361C832 /* PlaylistPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistPickerView.swift; sourceTree = "<group>"; };
+		A56E04671A9CE4087BCD9099 /* AddToPlaylistFeedbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPlaylistFeedbackTests.swift; sourceTree = "<group>"; };
+		A5AD1390D9CC76B708341634 /* dtoa.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dtoa.c; sourceTree = "<group>"; };
+		A5D43C1658B91BB1936F1D00 /* PlaylistStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistStorage.swift; sourceTree = "<group>"; };
+		A79B8DF07804F994BC52FB99 /* PlaylistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailView.swift; sourceTree = "<group>"; };
+		A805710C4F7EFCB5F3C80B86 /* quickjs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = quickjs.c; sourceTree = "<group>"; };
+		B364AE6CECDF71FE01761D65 /* PlaylistModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModelTests.swift; sourceTree = "<group>"; };
+		D38F1915EDA23F980E96A1D7 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		DA202F76116556EE1B0D1611 /* libunicode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libunicode.c; sourceTree = "<group>"; };
+		DCA7FF3E6D7E6D1B6E9E6B85 /* PlaylistStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistStoreTests.swift; sourceTree = "<group>"; };
+		DCB2765A3346ED3C91EA9C78 /* ClipAudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipAudioApp.swift; sourceTree = "<group>"; };
+		DEB6DF85D4CF20D27ED6A684 /* PlaylistStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistStore.swift; sourceTree = "<group>"; };
+		E15EBD306BC468B259C8EF4B /* AudioPlayerPlaylistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerPlaylistTests.swift; sourceTree = "<group>"; };
+		E5150C29D2D323FA464FBF6C /* DebugSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSettings.swift; sourceTree = "<group>"; };
+		E9FA48E8D06C1EE1114B27E6 /* M1HarnessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M1HarnessView.swift; sourceTree = "<group>"; };
+		EBC4FD5AC433A95F856A0441 /* ClipAudio.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ClipAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0AA5915E24F45DC80697AE /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		F017EA7C306BB3253FB7EA66 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		F5981CB552C7C0D00E3F26D8 /* app_packages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app_packages; sourceTree = SOURCE_ROOT; };
+		FC5F6087D2ED00EF9B9E07DB /* SelfTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTest.swift; sourceTree = "<group>"; };
+		"TEMP_E92F5476-FF45-449E-8C93-1F32F3211AEC" /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B8F10DF850B53DB8C30245EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40878258870CB3B0FE039713 /* Python.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10D8DACFCF93FE02E6597BA1 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				3A9987C09D973C895D447794 /* quickjs */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		38AD3E82B3A45A50303873C3 = {
+			isa = PBXGroup;
+			children = (
+				4E32CC8619520873BA53A6C6 /* app */,
+				F5981CB552C7C0D00E3F26D8 /* app_packages */,
+				ECA01D2A0001D1C5D00D4B05 /* ClipAudio */,
+				B40A327DA97B1B0A6938DAD4 /* ClipAudioTests */,
+				10D8DACFCF93FE02E6597BA1 /* vendor */,
+				AE40AE4AD6939CF44E81D1B9 /* Frameworks */,
+				DF01580BA4BD46D00972407F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A9987C09D973C895D447794 /* quickjs */ = {
+			isa = PBXGroup;
+			children = (
+				A5AD1390D9CC76B708341634 /* dtoa.c */,
+				98208F0169A050635510E1F4 /* libregexp.c */,
+				DA202F76116556EE1B0D1611 /* libunicode.c */,
+				A805710C4F7EFCB5F3C80B86 /* quickjs.c */,
+			);
+			path = quickjs;
+			sourceTree = "<group>";
+		};
+		86EC23881B6EECE332F7F40B /* shim */ = {
+			isa = PBXGroup;
+			children = (
+				53990A06CB4C359A6E0E34E6 /* ClipAudio-Bridging-Header.h */,
+				808632FABCA312BCB7BC32FB /* ClipAudioPython.c */,
+				85EB1B3964B78915D07F5A46 /* ClipAudioPython.h */,
+				718D1465D8D829992DE573E8 /* qjs_module.c */,
+			);
+			path = shim;
+			sourceTree = "<group>";
+		};
+		AE40AE4AD6939CF44E81D1B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D258FB8D7D409353289CD18 /* Python.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B370A48EED99D170AF039705 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A79B8DF07804F994BC52FB99 /* PlaylistDetailView.swift */,
+				A078E1D2D1E7D3320361C832 /* PlaylistPickerView.swift */,
+				632C92DE81701CB07660DD6C /* PlaylistRowState.swift */,
+				4657FC07B1F0D72C89B77421 /* PlaylistsView.swift */,
+				6518B23525FB1531D670E173 /* RootTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B40A327DA97B1B0A6938DAD4 /* ClipAudioTests */ = {
+			isa = PBXGroup;
+			children = (
+				A56E04671A9CE4087BCD9099 /* AddToPlaylistFeedbackTests.swift */,
+				E15EBD306BC468B259C8EF4B /* AudioPlayerPlaylistTests.swift */,
+				760D3CE96FF67A2266FA5EBD /* MetadataBackfillerTests.swift */,
+				B364AE6CECDF71FE01761D65 /* PlaylistModelTests.swift */,
+				982249DAFF07DEBDD1058D5D /* PlaylistRowStateTests.swift */,
+				1C7D15E94173577A95C06AF2 /* PlaylistStorageTests.swift */,
+				DCA7FF3E6D7E6D1B6E9E6B85 /* PlaylistStoreTests.swift */,
+			);
+			path = ClipAudioTests;
+			sourceTree = "<group>";
+		};
+		DF01580BA4BD46D00972407F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBC4FD5AC433A95F856A0441 /* ClipAudio.app */,
+				1529A5B9EAB6904E7609A013 /* ClipAudioTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E41788E6614DD716A1ABCBFD /* Playlists */ = {
+			isa = PBXGroup;
+			children = (
+				9B039B94724218786F914700 /* MetadataBackfiller.swift */,
+				D38F1915EDA23F980E96A1D7 /* Playlist.swift */,
+				A5D43C1658B91BB1936F1D00 /* PlaylistStorage.swift */,
+				DEB6DF85D4CF20D27ED6A684 /* PlaylistStore.swift */,
+			);
+			path = Playlists;
+			sourceTree = "<group>";
+		};
+		ECA01D2A0001D1C5D00D4B05 /* ClipAudio */ = {
+			isa = PBXGroup;
+			children = (
+				1D6F49FF86CD3ED6CC87168C /* AudioPlayer.swift */,
+				DCB2765A3346ED3C91EA9C78 /* ClipAudioApp.swift */,
+				E5150C29D2D323FA464FBF6C /* DebugSettings.swift */,
+				5F42AC67CAC6180BB3F9B4E0 /* Info.plist */,
+				E9FA48E8D06C1EE1114B27E6 /* M1HarnessView.swift */,
+				116F0142F8CD11A01F4F588F /* PlaybackProbe.swift */,
+				31D2BC759825F90E09F6CE41 /* PlayerProbe.swift */,
+				ED0AA5915E24F45DC80697AE /* PlayerView.swift */,
+				2866B335889B428203277AEB /* PythonRuntime.swift */,
+				FC5F6087D2ED00EF9B9E07DB /* SelfTest.swift */,
+				F017EA7C306BB3253FB7EA66 /* Track.swift */,
+				E41788E6614DD716A1ABCBFD /* Playlists */,
+				86EC23881B6EECE332F7F40B /* shim */,
+				B370A48EED99D170AF039705 /* Views */,
+			);
+			path = ClipAudio;
+			sourceTree = "<group>";
+		};
+		"TEMP_0132DDB2-9C18-4D66-9A3F-00CBE35795A5" /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				"TEMP_E92F5476-FF45-449E-8C93-1F32F3211AEC" /* Local.xcconfig */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B97615100295458CF35F6C5 /* ClipAudio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB06879380764B3A01B2C792 /* Build configuration list for PBXNativeTarget "ClipAudio" */;
+			buildPhases = (
+				89066CA6C045E4DA187E7B0A /* Sources */,
+				E0570291DD2AF47FB17BF8A6 /* Resources */,
+				B8F10DF850B53DB8C30245EA /* Frameworks */,
+				376D5E026C594667FCE7DFB8 /* Embed Frameworks */,
+				330157590A7E294B232B68FB /* Process Python libraries */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClipAudio;
+			packageProductDependencies = (
+			);
+			productName = ClipAudio;
+			productReference = EBC4FD5AC433A95F856A0441 /* ClipAudio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C45E333F599B76A72490E74B /* ClipAudioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DF5AB077BC6E3647EAB6E6A /* Build configuration list for PBXNativeTarget "ClipAudioTests" */;
+			buildPhases = (
+				6DB3A70C35834A37ABE0FA5D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67AC854EAD5D5C922B061758 /* PBXTargetDependency */,
+			);
+			name = ClipAudioTests;
+			packageProductDependencies = (
+			);
+			productName = ClipAudioTests;
+			productReference = 1529A5B9EAB6904E7609A013 /* ClipAudioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79A1D06038A07FB808D7CEF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7B97615100295458CF35F6C5 = {
+						ProvisioningStyle = Automatic;
+					};
+					C45E333F599B76A72490E74B = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FB5654E9D96F0ECBBBF4E487 /* Build configuration list for PBXProject "ClipAudio" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 38AD3E82B3A45A50303873C3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = DF01580BA4BD46D00972407F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B97615100295458CF35F6C5 /* ClipAudio */,
+				C45E333F599B76A72490E74B /* ClipAudioTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E0570291DD2AF47FB17BF8A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C831A01A6791D31F09398D91 /* app in Resources */,
+				6D72EB93B303D37A6202BCA0 /* app_packages in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		330157590A7E294B232B68FB /* Process Python libraries */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Process Python libraries";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nsource \"$PROJECT_DIR/Support/Python.xcframework/build/utils.sh\"\ninstall_python Support/Python.xcframework app_packages app\n\n# Trim. install_stdlib copies the FULL stdlib, including CPython's own\n# test suite (~37MB). None of this is reachable at runtime.\nSTDLIB=\"$CODESIGNING_FOLDER_PATH/python/lib/python3.14\"\nfor junk in test idlelib ensurepip pydoc_data turtledemo tkinter lib2to3 \\\n            distutils venv curses dbm sqlite3/test; do\n  rm -rf \"$STDLIB/$junk\"\ndone\nfind \"$STDLIB\" -name '__pycache__' -type d -prune -exec rm -rf {} + 2>/dev/null || true\nfind \"$CODESIGNING_FOLDER_PATH/app_packages\" -name '__pycache__' -type d -prune -exec rm -rf {} + 2>/dev/null || true\necho \"trimmed bundle: $(du -sh \"$CODESIGNING_FOLDER_PATH\" | cut -f1)\"\n\n# Precompile to bytecode. Python-Apple-support ships source only, the\n# bundle is read-only and write_bytecode=0, so without this every cold\n# start reparses ~20MB of .py — 16.4s on an A16 (M1 device run).\n# unchecked-hash: never stat/validate, the bundle cannot change.\n# Target version is whatever install_stdlib just laid down.\nSTDLIB=\"$(ls -1d \"$CODESIGNING_FOLDER_PATH\"/python/lib/python3.* 2>/dev/null | head -1)\"\nTARGET_VER=\"$(basename \"$STDLIB\" | sed 's/^python//')\"\n# Xcode build phases get a restricted PATH where python3 is macOS's\n# system 3.9. Compiling with it would emit wrong-magic .pyc, and we\n# delete the sources — so find a matching interpreter or fail loudly.\nPYBIN=\"\"\nfor C in \"$CLIPAUDIO_HOST_PYTHON\" \\\n         \"/opt/homebrew/bin/python$TARGET_VER\" \\\n         \"/usr/local/bin/python$TARGET_VER\" \\\n         \"/opt/homebrew/bin/python3\" \\\n         \"$(command -v \"python$TARGET_VER\" 2>/dev/null)\" \\\n         \"$(command -v python3 2>/dev/null)\"; do\n  [ -n \"$C\" ] && [ -x \"$C\" ] || continue\n  V=\"$(\"$C\" -c 'import sys;print(\"%d.%d\"%sys.version_info[:2])' 2>/dev/null)\" || continue\n  if [ \"$V\" = \"$TARGET_VER\" ]; then PYBIN=\"$C\"; break; fi\ndone\nif [ -z \"$PYBIN\" ]; then\n  echo \"error: no host python $TARGET_VER found for bytecode precompilation.\" >&2\n  echo \"       set CLIPAUDIO_HOST_PYTHON to a python $TARGET_VER binary.\" >&2\n  exit 1\nfi\necho \"precompiling with $PYBIN (python $TARGET_VER)\"\nfor D in \"$STDLIB\" \"$CODESIGNING_FOLDER_PATH/app_packages\"; do\n  [ -d \"$D\" ] || continue\n  \"$PYBIN\" -m compileall -q -b --invalidation-mode unchecked-hash \"$D\" >/dev/null 2>&1 || true\n  # Drop source only where bytecode actually exists, so a file that\n  # failed to compile is never silently deleted.\n  find \"$D\" -name '*.py' | while read -r F; do\n    [ -f \"${F%.py}.pyc\" ] && rm -f \"$F\"\n  done\n  find \"$D\" -name '__pycache__' -type d -prune -exec rm -rf {} + 2>/dev/null || true\ndone\necho \"precompiled bundle: $(du -sh \"$CODESIGNING_FOLDER_PATH\" | cut -f1)\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6DB3A70C35834A37ABE0FA5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01682E7AE3373100727CFDD6 /* AddToPlaylistFeedbackTests.swift in Sources */,
+				DD7D5C6F58A7D1721C839DAB /* AudioPlayerPlaylistTests.swift in Sources */,
+				831FC99BE84E37DC11FB19FF /* MetadataBackfillerTests.swift in Sources */,
+				5A77BEC25705E2FB6254FE38 /* PlaylistModelTests.swift in Sources */,
+				2E0FDEEF8CB0F16DE6BD9A25 /* PlaylistRowStateTests.swift in Sources */,
+				D9D2489E6678E5DFA0DEF0D6 /* PlaylistStorageTests.swift in Sources */,
+				5C9ABCFEF56DDDB82843805B /* PlaylistStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89066CA6C045E4DA187E7B0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88A42660B3645A25F8962BBD /* AudioPlayer.swift in Sources */,
+				D870E5E24F2F6D037B28312F /* ClipAudioApp.swift in Sources */,
+				D525DBC3616E98230106C4B6 /* ClipAudioPython.c in Sources */,
+				61887729344F9FBE08FD0FB2 /* DebugSettings.swift in Sources */,
+				AA6BC13E9BEC8FF40F5FEBD4 /* M1HarnessView.swift in Sources */,
+				508544C282FFA1B43CB1217F /* MetadataBackfiller.swift in Sources */,
+				04BB750C83B1FB35EBDC49F8 /* PlaybackProbe.swift in Sources */,
+				A1866DBC6800BE7E5EE9DCCD /* PlayerProbe.swift in Sources */,
+				3B9F4D3DC6CE5F439A16735D /* PlayerView.swift in Sources */,
+				FF4BE1D76037A0D9999BDE41 /* Playlist.swift in Sources */,
+				5C8AE79BB771E84F60D9077A /* PlaylistDetailView.swift in Sources */,
+				2D9870F3156C5D9A505748DA /* PlaylistPickerView.swift in Sources */,
+				443A714EEE384E2526A83FBB /* PlaylistRowState.swift in Sources */,
+				F0441EB6DC7A35DB5CBFBA8D /* PlaylistStorage.swift in Sources */,
+				726785EFC7178A30C89EDA25 /* PlaylistStore.swift in Sources */,
+				32EE068F3D0A3308694AFBD4 /* PlaylistsView.swift in Sources */,
+				E49D0AB0977CDA078B288F87 /* PythonRuntime.swift in Sources */,
+				1C0854ED9629A3C3D1139AF1 /* RootTabView.swift in Sources */,
+				133E592EEF68E6F679EBE6E0 /* SelfTest.swift in Sources */,
+				A9DF27E004356C29419C7880 /* Track.swift in Sources */,
+				83DC90AEED73A35365E528EA /* dtoa.c in Sources */,
+				47DA4439C23600806DE568CC /* libregexp.c in Sources */,
+				A061B49C235BFD4142D91AA7 /* libunicode.c in Sources */,
+				8886B9CE6B73C006579ACE48 /* qjs_module.c in Sources */,
+				A5127B9E8FF03B73E781D898 /* quickjs.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67AC854EAD5D5C922B061758 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B97615100295458CF35F6C5 /* ClipAudio */;
+			targetProxy = A783A79FD381A5A7FFB6341B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0E020FDA771F2FC644A01127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"Support\"",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"_GNU_SOURCE=1",
+				);
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(BUILT_PRODUCTS_DIR)/Python.framework/Headers\"",
+					"\"$(PROJECT_DIR)/vendor/quickjs\"",
+				);
+				INFOPLIST_FILE = ClipAudio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = stream.clipaudio.app;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "ClipAudio/shim/ClipAudio-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2B2927C550E1FEA91107BA06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = stream.clipaudio.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClipAudio.app/ClipAudio";
+			};
+			name = Debug;
+		};
+		927D823C90745EF7BDA3A371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = stream.clipaudio.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClipAudio.app/ClipAudio";
+			};
+			name = Release;
+		};
+		AAF4DE048A4BCA27A432661E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = "TEMP_E92F5476-FF45-449E-8C93-1F32F3211AEC" /* Local.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/Python.framework/Headers\"";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C45BFF15F78396D9722483BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"Support\"",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"_GNU_SOURCE=1",
+				);
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(BUILT_PRODUCTS_DIR)/Python.framework/Headers\"",
+					"\"$(PROJECT_DIR)/vendor/quickjs\"",
+				);
+				INFOPLIST_FILE = ClipAudio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = stream.clipaudio.app;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "ClipAudio/shim/ClipAudio-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF69C078B39032016CE8FBDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = "TEMP_E92F5476-FF45-449E-8C93-1F32F3211AEC" /* Local.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/Python.framework/Headers\"";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9DF5AB077BC6E3647EAB6E6A /* Build configuration list for PBXNativeTarget "ClipAudioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B2927C550E1FEA91107BA06 /* Debug */,
+				927D823C90745EF7BDA3A371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CB06879380764B3A01B2C792 /* Build configuration list for PBXNativeTarget "ClipAudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E020FDA771F2FC644A01127 /* Debug */,
+				C45BFF15F78396D9722483BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FB5654E9D96F0ECBBBF4E487 /* Build configuration list for PBXProject "ClipAudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAF4DE048A4BCA27A432661E /* Debug */,
+				FF69C078B39032016CE8FBDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 79A1D06038A07FB808D7CEF9 /* Project object */;
+}

@@ -1,0 +1,4 @@
+// Leave DEVELOPMENT_TEAM unset so Xcode's own Signing & Capabilities
+// selection governs. Set it here only if you build from the command line.
+// DEVELOPMENT_TEAM = YOURTEAMID
+PRODUCT_BUNDLE_IDENTIFIER = stream.clipaudio.app

@@ -20,9 +20,11 @@ final class AudioPlayer: NSObject, ObservableObject {
     @Published private(set) var isBuffering = false
     /// Name of the playlist being played, or nil for ad-hoc links.
     @Published private(set) var playbackContext: String?
-    /// Set when a track failed in a way that re-resolving will not fix
+    /// Fires when a track failed in a way that re-resolving will not fix
     /// (removed, private, region-blocked). Views may relay this to storage.
-    @Published private(set) var lastDeadSourceURL: String?
+    /// A one-shot event, deliberately not @Published state: a subject has no
+    /// current value to replay to a re-subscribing view.
+    let deadSourceURL = PassthroughSubject<String, Never>()
 
     var current: Track? { queue.indices.contains(index) ? queue[index] : nil }
 
@@ -187,7 +189,7 @@ final class AudioPlayer: NSObject, ObservableObject {
             // "HTTP Error 503: Service Unavailable" to "Video unavailable";
             // isDefinitive checks transient markers first (Task 4).
             if e.isDefinitive {
-                lastDeadSourceURL = track.sourceURL
+                deadSourceURL.send(track.sourceURL)
             }
             statusLine = e.userMessage
             isBuffering = false

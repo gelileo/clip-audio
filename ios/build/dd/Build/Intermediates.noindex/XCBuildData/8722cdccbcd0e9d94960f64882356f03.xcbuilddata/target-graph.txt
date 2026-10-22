@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'ClipAudioTests' in project 'ClipAudio'
+➜ Explicit dependency on target 'ClipAudio' in project 'ClipAudio'
+Target 'ClipAudio' in project 'ClipAudio' (no dependencies)

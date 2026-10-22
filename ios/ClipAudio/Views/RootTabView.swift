@@ -15,14 +15,15 @@ struct RootTabView: View {
         }
         .environmentObject(store)
         .task {
+            guard backfiller == nil else { return }
             let bf = MetadataBackfiller(store: store, source: YtDlpStreamSource())
             backfiller = bf
-            bf.start()
+            startBackfillerIfWritable()
         }
         .onChange(of: scenePhase) { _, phase in
             switch phase {
             case .active:
-                backfiller?.start()
+                startBackfillerIfWritable()
             case .background, .inactive:
                 // Backgrounded WKWebView/network work is throttled, and a
                 // debounced save could be lost if we are suspended (PRD C9).
@@ -32,7 +33,7 @@ struct RootTabView: View {
                 break
             }
         }
-        .onReceive(AudioPlayer.shared.$lastDeadSourceURL.compactMap { $0 }) { url in
+        .onReceive(AudioPlayer.shared.deadSourceURL) { url in
             // Every stored copy of the link is marked; rows in different
             // playlists are independent.
             store.markUnavailable(sourceURL: url)
@@ -44,5 +45,12 @@ struct RootTabView: View {
         } message: {
             Text(store.statusMessage ?? "")
         }
+    }
+
+    /// A library we cannot save should not be churned against (network,
+    /// WKWebView, attempt counters, in-memory-only unavailable marks).
+    private func startBackfillerIfWritable() {
+        guard !store.isReadOnly else { return }
+        backfiller?.start()
     }
 }

@@ -1,0 +1,199 @@
+{
+  "" : {
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary.dia",
+    "emit-module-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary-emit-module.dia",
+    "pch" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudio-primary.swiftdeps"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/AudioPlayer.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/AudioPlayer.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/AudioPlayer.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/AudioPlayer.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/AudioPlayer.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/AudioPlayer.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/AudioPlayer.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/AudioPlayer.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/AudioPlayer~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/ClipAudioApp.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudioApp.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudioApp.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudioApp.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudioApp.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudioApp.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudioApp.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudioApp.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/ClipAudioApp~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/DebugSettings.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/DebugSettings.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/DebugSettings.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/DebugSettings.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/DebugSettings.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/DebugSettings.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/DebugSettings.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/DebugSettings.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/DebugSettings~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/M1HarnessView.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/M1HarnessView.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/M1HarnessView.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/M1HarnessView.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/M1HarnessView.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/M1HarnessView.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/M1HarnessView.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/M1HarnessView.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/M1HarnessView~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/PlaybackProbe.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaybackProbe.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaybackProbe.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaybackProbe.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaybackProbe.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaybackProbe.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaybackProbe.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaybackProbe.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaybackProbe~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/PlayerProbe.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerProbe.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerProbe.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerProbe.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerProbe.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerProbe.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerProbe.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerProbe.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerProbe~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/PlayerView.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerView.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerView.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerView.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerView.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerView.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerView.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerView.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlayerView~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/Playlists/MetadataBackfiller.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/MetadataBackfiller.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/MetadataBackfiller.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/MetadataBackfiller.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/MetadataBackfiller.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/MetadataBackfiller.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/MetadataBackfiller.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/MetadataBackfiller.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/MetadataBackfiller~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/Playlists/Playlist.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Playlist.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Playlist.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Playlist.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Playlist.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Playlist.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Playlist.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Playlist.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Playlist~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/Playlists/PlaylistStorage.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStorage.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStorage.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStorage.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStorage.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStorage.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStorage.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStorage.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStorage~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/Playlists/PlaylistStore.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStore.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStore.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStore.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStore.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStore.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStore.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStore.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistStore~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/PythonRuntime.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PythonRuntime.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PythonRuntime.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PythonRuntime.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PythonRuntime.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PythonRuntime.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PythonRuntime.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PythonRuntime.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PythonRuntime~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/SelfTest.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/SelfTest.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/SelfTest.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/SelfTest.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/SelfTest.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/SelfTest.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/SelfTest.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/SelfTest.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/SelfTest~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/Track.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Track.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Track.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Track.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Track.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Track.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Track.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Track.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/Track~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/Views/PlaylistDetailView.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistDetailView.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistDetailView.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistDetailView.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistDetailView.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistDetailView.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistDetailView.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistDetailView.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistDetailView~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/Views/PlaylistPickerView.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistPickerView.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistPickerView.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistPickerView.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistPickerView.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistPickerView.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistPickerView.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistPickerView.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistPickerView~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/Views/PlaylistRowState.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistRowState.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistRowState.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistRowState.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistRowState.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistRowState.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistRowState.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistRowState.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistRowState~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/Views/PlaylistsView.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistsView.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistsView.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistsView.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistsView.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistsView.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistsView.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistsView.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/PlaylistsView~partial.swiftmodule"
+  },
+  "/Users/kunlu/Projects/gelileo/clip_audio/ios/ClipAudio/Views/RootTabView.swift" : {
+    "const-values" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/RootTabView.swiftconstvalues",
+    "dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/RootTabView.d",
+    "diagnostics" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/RootTabView.dia",
+    "index-unit-output-path" : "/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/RootTabView.o",
+    "llvm-bc" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/RootTabView.bc",
+    "object" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/RootTabView.o",
+    "swift-dependencies" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/RootTabView.swiftdeps",
+    "swiftmodule" : "/Users/kunlu/Projects/gelileo/clip_audio/ios/build/dd/Build/Intermediates.noindex/ClipAudio.build/Debug-iphonesimulator/ClipAudio.build/Objects-normal/arm64/RootTabView~partial.swiftmodule"
+  }
+}
