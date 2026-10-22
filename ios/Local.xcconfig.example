@@ -1,0 +1,4 @@
+// Copy to Local.xcconfig (gitignored).
+// Leave DEVELOPMENT_TEAM unset to use Xcode's UI selection; set it for CLI builds.
+// DEVELOPMENT_TEAM = YOURTEAMID
+PRODUCT_BUNDLE_IDENTIFIER = stream.clipaudio.app

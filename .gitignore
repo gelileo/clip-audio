@@ -1,0 +1,11 @@
+ios/Support/
+ios/app_packages/
+ios/*.xcodeproj/
+build/
+DerivedData/
+*.ipa
+.DS_Store
+ios/Local.xcconfig
+__pycache__/
+*.pyc
+ios/vendor/
