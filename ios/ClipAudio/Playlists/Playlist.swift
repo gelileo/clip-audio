@@ -89,6 +89,11 @@ struct ResolvedMetadata: Equatable {
     let uploader: String?
     let duration: Double?
     let artworkURL: String?
+
+    /// True when the resolve produced nothing worth showing.
+    var isEmpty: Bool {
+        title == nil && uploader == nil && duration == nil && artworkURL == nil
+    }
 }
 
 extension PlaylistItem {
