@@ -86,6 +86,23 @@ struct PlaylistStoreTests {
         #expect(!store.playlists.first { $0.id == b.id }!.items[0].unavailable)
     }
 
+    @Test("markUnavailable(sourceURL:) marks every matching row in every playlist")
+    func deadLinkFansOut() throws {
+        let (store, _) = try makeStore()
+        let a = try store.createPlaylist(name: "A")
+        let b = try store.createPlaylist(name: "B")
+        _ = store.add(sourceURL: "https://x/dead", to: a.id)
+        _ = store.add(sourceURL: "https://x/dead", to: b.id)
+        _ = store.add(sourceURL: "https://x/live", to: b.id)
+        #expect(store.markUnavailable(sourceURL: "https://x/dead") == 2)
+        let items = store.playlists.flatMap(\.items)
+        let dead = items.filter { $0.sourceURL == "https://x/dead" }
+        let live = items.filter { $0.sourceURL == "https://x/live" }
+        #expect(dead.count == 2 && dead.allSatisfy { $0.unavailable })
+        #expect(live.count == 1 && live.allSatisfy { !$0.unavailable })
+        #expect(store.markUnavailable(sourceURL: "https://x/dead") == 0)
+    }
+
     @Test("toggleFavorite adds then removes, reporting the new state")
     func heartToggles() throws {
         let (store, _) = try makeStore()

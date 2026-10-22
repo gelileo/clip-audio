@@ -20,6 +20,9 @@ final class AudioPlayer: NSObject, ObservableObject {
     @Published private(set) var isBuffering = false
     /// Name of the playlist being played, or nil for ad-hoc links.
     @Published private(set) var playbackContext: String?
+    /// Set when a track failed in a way that re-resolving will not fix
+    /// (removed, private, region-blocked). Views may relay this to storage.
+    @Published private(set) var lastDeadSourceURL: String?
 
     var current: Track? { queue.indices.contains(index) ? queue[index] : nil }
 
@@ -179,6 +182,13 @@ final class AudioPlayer: NSObject, ObservableObject {
             statusLine = track.formatID.map { "Playing · \($0)" } ?? "Playing"
             prefetchNext()
         } catch let e as YtDlpStreamSource.ResolveError {
+            // Use the shared classifier, NOT userMessage. userMessage is
+            // deliberately loose for display and maps a transient
+            // "HTTP Error 503: Service Unavailable" to "Video unavailable";
+            // isDefinitive checks transient markers first (Task 4).
+            if e.isDefinitive {
+                lastDeadSourceURL = track.sourceURL
+            }
             statusLine = e.userMessage
             isBuffering = false
         } catch {

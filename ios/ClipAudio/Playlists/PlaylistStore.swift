@@ -204,6 +204,21 @@ final class PlaylistStore: ObservableObject {
         scheduleSave()
     }
 
+    /// Mark every stored row for `sourceURL`, in every playlist, unavailable.
+    /// Rows in different playlists are independent, so each is marked on its
+    /// own. Returns how many rows were marked.
+    @discardableResult
+    func markUnavailable(sourceURL: String) -> Int {
+        var n = 0
+        for p in playlists {
+            for item in p.items where item.sourceURL == sourceURL && !item.unavailable {
+                markUnavailable(itemID: item.id, in: p.id)
+                n += 1
+            }
+        }
+        return n
+    }
+
     func itemsNeedingMetadata(limit: Int) -> [(playlistID: UUID, item: PlaylistItem)] {
         var out: [(UUID, PlaylistItem)] = []
         for p in playlists {
