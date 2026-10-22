@@ -18,6 +18,8 @@ final class AudioPlayer: NSObject, ObservableObject {
     @Published private(set) var duration: Double = 0
     @Published private(set) var statusLine = "Idle"
     @Published private(set) var isBuffering = false
+    /// Name of the playlist being played, or nil for ad-hoc links.
+    @Published private(set) var playbackContext: String?
 
     var current: Track? { queue.indices.contains(index) ? queue[index] : nil }
 
@@ -99,7 +101,40 @@ final class AudioPlayer: NSObject, ObservableObject {
 
     // MARK: - Queue
 
+    /// Replace the queue with a playlist and begin at `index`.
+    ///
+    /// The queue takes copies, so later edits to the stored playlist do not
+    /// disturb playback. AudioPlayer intentionally knows nothing about
+    /// PlaylistStore — views mediate.
+    func play(playlist: Playlist, startingAt index: Int = 0) {
+        loadQueue(from: playlist, startingAt: index)
+        Task { await startCurrent() }
+    }
+
+    /// Queue mutation only, no playback. Separated so it is testable without
+    /// touching AVFoundation or the network.
+    func loadQueue(from playlist: Playlist, startingAt index: Int) {
+        queue = playlist.items.map { Track(from: $0) }
+        self.index = max(0, min(index, max(0, queue.count - 1)))
+        playbackContext = playlist.name
+    }
+
+    /// Test seam: append an ad-hoc link without starting playback.
+    func appendForTesting(sourceURL: String) {
+        queue.append(Track(sourceURL: sourceURL))
+        playbackContext = nil
+    }
+
+    /// Test seam: return to a clean state between tests.
+    func resetForTesting() {
+        queue.removeAll()
+        index = 0
+        playbackContext = nil
+        statusLine = "Idle"
+    }
+
     func enqueue(_ sourceURL: String, playImmediately: Bool = true) {
+        playbackContext = nil
         let t = Track(sourceURL: sourceURL)
         queue.append(t)
         if playImmediately && queue.count == 1 {
