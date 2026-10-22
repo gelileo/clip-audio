@@ -1740,8 +1740,11 @@ In `startCurrent()`, in the `catch let e as YtDlpStreamSource.ResolveError` bran
 before setting `statusLine`, add:
 
 ```swift
-            let m = e.userMessage
-            if m == "Video unavailable" || m == "Not available in your region" {
+            // Use the shared classifier, NOT userMessage. userMessage is
+            // deliberately loose for display and maps a transient
+            // "HTTP Error 503: Service Unavailable" to "Video unavailable";
+            // isDefinitive checks transient markers first (Task 4).
+            if e.isDefinitive {
                 lastDeadSourceURL = track.sourceURL
             }
 ```
