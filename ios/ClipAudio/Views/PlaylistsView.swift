@@ -70,14 +70,13 @@ struct PlaylistsView: View {
                 }
                 .disabled(!PlaylistEditing.canSubmit(name: newName))
             }
-            .alert("Rename playlist", isPresented: Binding(
-                get: { renamingID != nil }, set: { if !$0 { renamingID = nil } })) {
-                // Hoisted so the action cannot observe the binding's clearing.
-                let pending = renamingID
+            .alert("Rename playlist",
+                   isPresented: Binding(get: { renamingID != nil },
+                                        set: { if !$0 { renamingID = nil } }),
+                   presenting: renamingID) { id in
                 TextField("Name", text: $renameText)
                 Button("Cancel", role: .cancel) {}
                 Button("Rename") {
-                    guard let id = pending else { return }
                     do { try store.renamePlaylist(id: id, to: renameText) }
                     catch { assertionFailure("unreachable store error: \(error)") }
                 }
