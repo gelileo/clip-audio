@@ -25,6 +25,9 @@ struct PlaylistStorage {
         case seeded(PlaylistFile, recoveredFrom: URL?)
         /// Written by a newer build: usable, but we must not write over it.
         case readOnly(PlaylistFile)
+        /// IO error, quarantine failure, or an undecodable newer file. The file is
+        /// untouched and the caller MUST NOT write.
+        case unreadable(Error)
     }
 
     let directory: URL
@@ -44,17 +47,31 @@ struct PlaylistStorage {
     }
 
     func load() -> LoadResult {
-        guard let data = try? Data(contentsOf: fileURL), !data.isEmpty else {
-            // Missing is normal on first launch. Empty is not — a zero-byte
-            // file means a previous write died, so preserve it like corruption.
-            let recovered = fm.fileExists(atPath: fileURL.path) ? quarantine() : nil
-            return .seeded(Self.seededFile(), recoveredFrom: recovered)
+        // Missing is normal on first launch.
+        guard fm.fileExists(atPath: fileURL.path) else {
+            return .seeded(Self.seededFile(), recoveredFrom: nil)
+        }
+        // An IO error is NOT corruption: leave the file alone and tell the
+        // caller not to write, or the next save would overwrite a healthy library.
+        let data: Data
+        do { data = try Data(contentsOf: fileURL) } catch { return .unreadable(error) }
+
+        // Zero bytes means a previous write died; preserve it like corruption.
+        if data.isEmpty { return recover() }
+
+        // Probe the version first so a newer build's file with a changed shape
+        // is never mistaken for corruption.
+        if let probe = try? JSONDecoder().decode(VersionProbe.self, from: data),
+           probe.schemaVersion > PlaylistFile.currentSchemaVersion {
+            do {
+                return .readOnly(try JSONDecoder().decode(PlaylistFile.self, from: data))
+            } catch {
+                // Newer and undecodable by us: untouched on disk, not writable.
+                return .unreadable(error)
+            }
         }
         guard let file = try? JSONDecoder().decode(PlaylistFile.self, from: data) else {
-            return .seeded(Self.seededFile(), recoveredFrom: quarantine())
-        }
-        if file.schemaVersion > PlaylistFile.currentSchemaVersion {
-            return .readOnly(file)
+            return recover()
         }
         return .loaded(migrate(file))
     }
@@ -66,19 +83,12 @@ struct PlaylistStorage {
         }
         try fm.createDirectory(at: directory, withIntermediateDirectories: true)
 
-        // Encode before touching the destination: a serializer failure must
-        // leave the existing library exactly as it was.
+        // Encode before touching the destination, then one atomic write
+        // (Foundation writes a temp file and renames it into place).
         var out = file
         out.schemaVersion = PlaylistFile.currentSchemaVersion
         let data = try serializer.encode(out)
-
-        let tmp = directory.appendingPathComponent("playlists.\(UUID().uuidString).tmp")
-        try data.write(to: tmp, options: .atomic)
-        if fm.fileExists(atPath: fileURL.path) {
-            _ = try fm.replaceItemAt(fileURL, withItemAt: tmp)
-        } else {
-            try fm.moveItem(at: tmp, to: fileURL)
-        }
+        try data.write(to: fileURL, options: .atomic)
     }
 
     /// v1 is the initial version, so this is the identity case today. It
@@ -90,11 +100,26 @@ struct PlaylistStorage {
         }
     }
 
+    /// Quarantine the bad file and re-seed. If it cannot be preserved, hand back
+    /// `.unreadable` so no writable store is ever returned over unsaved data.
+    private func recover() -> LoadResult {
+        do {
+            let moved = try quarantine()
+            return .seeded(Self.seededFile(), recoveredFrom: moved)
+        } catch {
+            return .unreadable(error)
+        }
+    }
+
+    private struct VersionProbe: Decodable { let schemaVersion: Int }
+
     /// Move an unreadable file aside. Never delete it — it is the user's data.
-    private func quarantine() -> URL? {
+    private func quarantine() throws -> URL {
         let stamp = ISO8601DateFormatter().string(from: Date())
             .replacingOccurrences(of: ":", with: "-")
-        let dest = directory.appendingPathComponent("playlists.corrupt-\(stamp).json")
-        do { try fm.moveItem(at: fileURL, to: dest); return dest } catch { return nil }
+        let suffix = UUID().uuidString.prefix(8)
+        let dest = directory.appendingPathComponent("playlists.corrupt-\(stamp)-\(suffix).json")
+        try fm.moveItem(at: fileURL, to: dest)
+        return dest
     }
 }

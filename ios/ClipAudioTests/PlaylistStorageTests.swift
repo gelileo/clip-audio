@@ -89,25 +89,115 @@ struct PlaylistStorageTests {
         }
     }
 
-    @Test("A failed write leaves the previous file intact")
+    @Test("A failed write leaves the previous file byte-identical")
     func atomicWriteKeepsPriorState() throws {
-        struct Exploding: PlaylistSerializing {
-            func encode(_ file: PlaylistFile) throws -> Data {
-                throw NSError(domain: "boom", code: 1)
-            }
-        }
         let dir = try tempDir()
         var good = PlaylistStorage.seededFile()
         good.playlists.append(Playlist(name: "Keep me"))
+        let s = PlaylistStorage(directory: dir)
+        try s.save(good)
+        let url = dir.appendingPathComponent("playlists.json")
+        let before = try Data(contentsOf: url)
+
+        // Fails at write time (no temp file can be created), after encoding.
+        try FileManager.default.setAttributes([.posixPermissions: 0o555], ofItemAtPath: dir.path)
+        defer { try? FileManager.default.setAttributes([.posixPermissions: 0o755], ofItemAtPath: dir.path) }
+        var changed = good
+        changed.playlists.append(Playlist(name: "Never lands"))
+        #expect(throws: (any Error).self) { try s.save(changed) }
+
+        #expect(try Data(contentsOf: url) == before)
+    }
+
+    @Test("A transient read error is unreadable and leaves the file in place")
+    func readErrorIsNotCorruption() throws {
+        let dir = try tempDir()
+        var good = PlaylistStorage.seededFile()
+        good.playlists.append(Playlist(name: "Healthy"))
         try PlaylistStorage(directory: dir).save(good)
+        let url = dir.appendingPathComponent("playlists.json")
+        let before = try Data(contentsOf: url)
 
-        #expect(throws: (any Error).self) {
-            try PlaylistStorage(directory: dir, serializer: Exploding()).save(good)
+        try FileManager.default.setAttributes([.posixPermissions: 0o000], ofItemAtPath: url.path)
+        defer { try? FileManager.default.setAttributes([.posixPermissions: 0o644], ofItemAtPath: url.path) }
+        guard case .unreadable = PlaylistStorage(directory: dir).load() else {
+            Issue.record("expected .unreadable"); return
         }
+        try FileManager.default.setAttributes([.posixPermissions: 0o644], ofItemAtPath: url.path)
+        #expect(try Data(contentsOf: url) == before)
+        let names = try FileManager.default.contentsOfDirectory(atPath: dir.path)
+        #expect(!names.contains { $0.contains("corrupt") })
+    }
 
-        guard case let .loaded(back) = PlaylistStorage(directory: dir).load() else {
-            Issue.record("expected .loaded"); return
+    @Test("A failed quarantine is unreadable, never a writable seed")
+    func quarantineFailureIsUnreadable() throws {
+        let dir = try tempDir()
+        let url = dir.appendingPathComponent("playlists.json")
+        let bad = Data("{ nope".utf8)
+        try bad.write(to: url)
+
+        try FileManager.default.setAttributes([.posixPermissions: 0o555], ofItemAtPath: dir.path)
+        defer { try? FileManager.default.setAttributes([.posixPermissions: 0o755], ofItemAtPath: dir.path) }
+        guard case .unreadable = PlaylistStorage(directory: dir).load() else {
+            Issue.record("expected .unreadable"); return
         }
-        #expect(back.playlists.contains { $0.name == "Keep me" })
+        #expect(try Data(contentsOf: url) == bad)
+    }
+
+    @Test("Recovery preserves the bad bytes and clears playlists.json")
+    func quarantinePreservesBytes() throws {
+        let dir = try tempDir()
+        let url = dir.appendingPathComponent("playlists.json")
+        let bad = Data("{ this is not json".utf8)
+        try bad.write(to: url)
+
+        guard case let .seeded(_, recovered) = PlaylistStorage(directory: dir).load() else {
+            Issue.record("expected .seeded"); return
+        }
+        let r = try #require(recovered)
+        #expect(try Data(contentsOf: r) == bad)
+        #expect(!FileManager.default.fileExists(atPath: url.path))
+    }
+
+    @Test("Two corruptions in the same second do not collide")
+    func quarantineNamesUnique() throws {
+        let dir = try tempDir()
+        let url = dir.appendingPathComponent("playlists.json")
+        var seen = Set<URL>()
+        for i in 0..<3 {
+            try Data("bad\(i)".utf8).write(to: url)
+            guard case let .seeded(_, r) = PlaylistStorage(directory: dir).load() else {
+                Issue.record("expected .seeded"); return
+            }
+            seen.insert(try #require(r))
+        }
+        #expect(seen.count == 3)
+    }
+
+    @Test("A newer file with a changed shape is read-only or unreadable, never quarantined")
+    func newerUnknownShapeNotQuarantined() throws {
+        let dir = try tempDir()
+        let url = dir.appendingPathComponent("playlists.json")
+        let future = Data(#"{"schemaVersion": 99, "playlists": "now a string"}"#.utf8)
+        try future.write(to: url)
+
+        if case .loaded = PlaylistStorage(directory: dir).load() { Issue.record("must not be .loaded") }
+        if case .seeded = PlaylistStorage(directory: dir).load() { Issue.record("must not be .seeded") }
+        #expect(try Data(contentsOf: url) == future)
+    }
+
+    @Test("Read-only load leaves the file untouched on disk")
+    func readOnlyLeavesFileUntouched() throws {
+        let dir = try tempDir()
+        let url = dir.appendingPathComponent("playlists.json")
+        let future = PlaylistFile(schemaVersion: 99, playlists: [Playlist(name: "F")])
+        try JSONEncoder().encode(future).write(to: url)
+        let before = try Data(contentsOf: url)
+
+        guard case .readOnly = PlaylistStorage(directory: dir).load() else {
+            Issue.record("expected .readOnly"); return
+        }
+        #expect(try Data(contentsOf: url) == before)
+        #expect(try FileManager.default.contentsOfDirectory(atPath: dir.path) == ["playlists.json"])
     }
 }
