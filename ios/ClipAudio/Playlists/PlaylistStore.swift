@@ -20,10 +20,11 @@ final class PlaylistStore: ObservableObject {
 
     private let storage: PlaylistStorage
     private var saveTask: Task<Void, Never>?
-    private let saveDebounce: Duration = .milliseconds(500)
+    private let saveDebounce: Duration
 
-    init(storage: PlaylistStorage) {
+    init(storage: PlaylistStorage, saveDebounce: Duration = .milliseconds(500)) {
         self.storage = storage
+        self.saveDebounce = saveDebounce
         switch storage.load() {
         case let .loaded(file):
             playlists = file.playlists

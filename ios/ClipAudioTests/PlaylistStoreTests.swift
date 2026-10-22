@@ -222,12 +222,12 @@ struct PlaylistStoreTests {
         }
     }
 
-    private func settle() async throws { try await Task.sleep(for: .milliseconds(1000)) }
+    private func settle() async throws { try await Task.sleep(for: .milliseconds(300)) }
 
     @Test("A debounced mutation lands on disk without a flush")
     func debouncedWriteLands() async throws {
         let d = try freshDir()
-        let store = PlaylistStore(storage: PlaylistStorage(directory: d))
+        let store = PlaylistStore(storage: PlaylistStorage(directory: d), saveDebounce: .milliseconds(50))
         _ = try store.createPlaylist(name: "Later")
         try await settle()
         let reloaded = PlaylistStore(storage: PlaylistStorage(directory: d))
@@ -238,7 +238,7 @@ struct PlaylistStoreTests {
     func rapidMutationsCoalesce() async throws {
         let d = try freshDir()
         let counter = CountingSerializer()
-        let store = PlaylistStore(storage: PlaylistStorage(directory: d, serializer: counter))
+        let store = PlaylistStore(storage: PlaylistStorage(directory: d, serializer: counter), saveDebounce: .milliseconds(50))
         for i in 1...5 { _ = try store.createPlaylist(name: "P\(i)") }
         try await settle()
         #expect(counter.count == 1)
@@ -253,7 +253,7 @@ struct PlaylistStoreTests {
         let json = #"{"schemaVersion":2,"playlists":[{"id":"\#(UUID().uuidString)","name":"Future","isFavorites":false,"items":[],"createdAt":0}]}"#
         try Data(json.utf8).write(to: url)
         let counter = CountingSerializer()
-        let store = PlaylistStore(storage: PlaylistStorage(directory: d, serializer: counter))
+        let store = PlaylistStore(storage: PlaylistStorage(directory: d, serializer: counter), saveDebounce: .milliseconds(50))
         #expect(store.isReadOnly)
         _ = try store.createPlaylist(name: "X")
         try await settle()
