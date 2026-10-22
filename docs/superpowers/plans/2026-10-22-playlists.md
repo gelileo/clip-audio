@@ -898,7 +898,7 @@ final class PlaylistStore: ObservableObject {
         scheduleSave()
     }
 
-    func resetMetadataAttempts(itemID: UUID, in playlistID: UUID) {
+    func retryMetadata(itemID: UUID, in playlistID: UUID) {
         guard let p = playlists.firstIndex(where: { $0.id == playlistID }),
               let i = playlists[p].items.firstIndex(where: { $0.id == itemID })
         else { return }
@@ -1475,7 +1475,7 @@ struct PlaylistDetailView: View {
                 } else if !item.hasMetadata {
                     if item.metadataAttempts >= MetadataBackfiller.maxMetadataAttempts {
                         Button("Retry") {
-                            store.resetMetadataAttempts(itemID: item.id, in: playlistID)
+                            store.retryMetadata(itemID: item.id, in: playlistID)
                         }
                         .font(.caption2).buttonStyle(.borderless)
                     } else {
