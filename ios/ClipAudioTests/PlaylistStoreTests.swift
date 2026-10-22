@@ -125,7 +125,7 @@ struct PlaylistStoreTests {
         let p = try store.createPlaylist(name: "Focus")
         for i in 1...3 { _ = store.add(sourceURL: "https://x/\(i)", to: p.id) }
         store.moveItems(in: p.id, fromOffsets: IndexSet(integer: 2), toOffset: 0)
-        store.flushForTesting()
+        store.flush()
 
         let reloaded = PlaylistStore(storage: PlaylistStorage(directory: dir))
         let items = reloaded.playlists.first { $0.name == "Focus" }!.items
@@ -152,7 +152,7 @@ struct PlaylistStoreTests {
         #expect(store.statusMessage != nil)
         #expect(store.playlists.contains { $0.name == "Future" })
         _ = try? store.createPlaylist(name: "X")
-        store.flushForTesting()
+        store.flush()
         #expect(try Data(contentsOf: url) == Data(json.utf8))
     }
 
@@ -167,7 +167,7 @@ struct PlaylistStoreTests {
         #expect(store.statusMessage != nil)
         #expect(store.playlists.count == 1 && store.playlists[0].isFavorites)
         _ = store.toggleFavorite(sourceURL: "https://x/1", metadataFrom: nil)
-        store.flushForTesting()
+        store.flush()
         var isDir: ObjCBool = false
         #expect(FileManager.default.fileExists(atPath: url.path, isDirectory: &isDir) && isDir.boolValue)
     }
@@ -182,7 +182,7 @@ struct PlaylistStoreTests {
         #expect(store.isReadOnly)
         #expect(store.statusMessage != nil)
         #expect(store.playlists.count == 1 && store.playlists[0].isFavorites)
-        store.flushForTesting()
+        store.flush()
         #expect(try Data(contentsOf: url) == Data(json.utf8))
     }
 
@@ -200,12 +200,64 @@ struct PlaylistStoreTests {
         let (store, _) = try makeStore()
         let p = try store.createPlaylist(name: "P")
         guard case let .added(a)? = store.add(sourceURL: "https://x/a", to: p.id),
-              case let .added(b)? = store.add(sourceURL: "https://x/b", to: p.id) else { return }
+              case let .added(b)? = store.add(sourceURL: "https://x/b", to: p.id)
+        else { Issue.record("expected .added"); return }
         #expect(store.itemsNeedingMetadata(limit: 10).count == 2)
         for _ in 0..<PlaylistLimits.maxMetadataAttempts {
             store.recordMetadataFailure(itemID: a.id, in: p.id)
         }
         store.markUnavailable(itemID: b.id, in: p.id)
         #expect(store.itemsNeedingMetadata(limit: 10).isEmpty)
+    }
+
+    // MARK: - Debounced save
+
+    private final class CountingSerializer: PlaylistSerializing, @unchecked Sendable {
+        private let lock = NSLock()
+        private var _count = 0
+        var count: Int { lock.lock(); defer { lock.unlock() }; return _count }
+        func encode(_ file: PlaylistFile) throws -> Data {
+            lock.lock(); _count += 1; lock.unlock()
+            return try JSONPlaylistSerializer().encode(file)
+        }
+    }
+
+    private func settle() async throws { try await Task.sleep(for: .milliseconds(1000)) }
+
+    @Test("A debounced mutation lands on disk without a flush")
+    func debouncedWriteLands() async throws {
+        let d = try freshDir()
+        let store = PlaylistStore(storage: PlaylistStorage(directory: d))
+        _ = try store.createPlaylist(name: "Later")
+        try await settle()
+        let reloaded = PlaylistStore(storage: PlaylistStorage(directory: d))
+        #expect(reloaded.playlists.contains { $0.name == "Later" })
+    }
+
+    @Test("Rapid mutations coalesce into a single write")
+    func rapidMutationsCoalesce() async throws {
+        let d = try freshDir()
+        let counter = CountingSerializer()
+        let store = PlaylistStore(storage: PlaylistStorage(directory: d, serializer: counter))
+        for i in 1...5 { _ = try store.createPlaylist(name: "P\(i)") }
+        try await settle()
+        #expect(counter.count == 1)
+        let reloaded = PlaylistStore(storage: PlaylistStorage(directory: d))
+        #expect(reloaded.playlists.count == 6)
+    }
+
+    @Test("No debounced write fires in read-only mode")
+    func readOnlyNoDebouncedWrite() async throws {
+        let d = try freshDir()
+        let url = d.appendingPathComponent("playlists.json")
+        let json = #"{"schemaVersion":2,"playlists":[{"id":"\#(UUID().uuidString)","name":"Future","isFavorites":false,"items":[],"createdAt":0}]}"#
+        try Data(json.utf8).write(to: url)
+        let counter = CountingSerializer()
+        let store = PlaylistStore(storage: PlaylistStorage(directory: d, serializer: counter))
+        #expect(store.isReadOnly)
+        _ = try store.createPlaylist(name: "X")
+        try await settle()
+        #expect(counter.count == 0)
+        #expect(try Data(contentsOf: url) == Data(json.utf8))
     }
 }

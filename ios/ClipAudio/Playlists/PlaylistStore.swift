@@ -223,14 +223,12 @@ final class PlaylistStore: ObservableObject {
         }
     }
 
-    /// Bypass the debounce. Tests and app-background use this.
-    func flushForTesting() {
+    /// Bypass the debounce and write now. Call on app background.
+    func flush() {
         saveTask?.cancel()
         guard !isReadOnly else { return }
         write(playlists)
     }
-
-    func flush() { flushForTesting() }
 
     private func write(_ snapshot: [Playlist]) {
         guard !isReadOnly else { return }
