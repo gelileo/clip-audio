@@ -5,6 +5,8 @@ struct PlayerView: View {
     @State private var input = ""
     @State private var clipboardSuggestion: String?
     @State private var showHarness = false
+    @State private var showingPicker = false
+    @EnvironmentObject private var store: PlaylistStore
     @FocusState private var inputFocused: Bool
 
     var body: some View {
@@ -24,8 +26,18 @@ struct PlayerView: View {
                     }
                     .accessibilityLabel("Diagnostics")
                 }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button { showingPicker = true } label: {
+                        Image(systemName: "text.badge.plus")
+                    }
+                    .disabled(player.current == nil || store.isReadOnly)
+                    .accessibilityLabel("Add to playlist")
+                }
             }
             .sheet(isPresented: $showHarness) { M1HarnessView() }
+            .sheet(isPresented: $showingPicker) {
+                if let t = player.current { PlaylistPickerView(track: t) }
+            }
             .task {
                 checkClipboard()
                 // Off by default. Enable in Diagnostics; it drives real
@@ -43,10 +55,29 @@ struct PlayerView: View {
         VStack(spacing: 12) {
             artwork
             VStack(spacing: 2) {
-                Text(player.current?.displayTitle ?? "Nothing playing")
-                    .font(.headline).lineLimit(2).multilineTextAlignment(.center)
+                HStack(spacing: 10) {
+                    Text(player.current?.displayTitle ?? "Nothing playing")
+                        .font(.headline).lineLimit(2).multilineTextAlignment(.center)
+                    if let t = player.current {
+                        // Read live from the store each render; never cached.
+                        let fav = store.isFavorited(sourceURL: t.sourceURL)
+                        Button {
+                            _ = store.toggleFavorite(sourceURL: t.sourceURL, metadataFrom: t)
+                        } label: {
+                            Image(systemName: fav ? "heart.fill" : "heart")
+                                .foregroundStyle(.pink)
+                        }
+                        .buttonStyle(.plain)
+                        .disabled(store.isReadOnly)
+                        .accessibilityLabel(AddToPlaylistFeedback.heartLabel(isFavorited: fav))
+                    }
+                }
                 Text(player.current?.uploader ?? " ")
                     .font(.subheadline).foregroundStyle(.secondary).lineLimit(1)
+                if let ctx = player.playbackContext {
+                    Text("Playing from \(ctx)")
+                        .font(.caption2).foregroundStyle(.secondary)
+                }
             }
             scrubber
             transport

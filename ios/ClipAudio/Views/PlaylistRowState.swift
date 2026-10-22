@@ -25,3 +25,19 @@ enum PlaylistEditing {
     static func canEdit(isReadOnly: Bool) -> Bool { !isReadOnly }
     static func canPlayAll(_ playlist: Playlist?) -> Bool { !(playlist?.items.isEmpty ?? true) }
 }
+
+/// Wording and rules for adding a track to a playlist. Pure so they are testable.
+enum AddToPlaylistFeedback {
+    /// nil means the add succeeded and the picker should dismiss.
+    static func message(for outcome: AddOutcome?, playlistName: String) -> String? {
+        switch outcome {
+        case .added?:          return nil
+        case .alreadyPresent?: return "Already in \(playlistName)"
+        case nil:              return "Couldn't add that"
+        }
+    }
+
+    static func heartLabel(isFavorited: Bool) -> String {
+        isFavorited ? "Remove from Favorites" : "Add to Favorites"
+    }
+}
