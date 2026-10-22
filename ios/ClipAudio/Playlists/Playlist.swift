@@ -107,7 +107,9 @@ extension PlaylistItem {
                   uploader: track.uploader,
                   duration: track.duration,
                   artworkURL: track.artworkURL,
-                  metadataFetchedAt: track.title == nil ? nil : Date())
+                  metadataFetchedAt: ResolvedMetadata(title: track.title, uploader: nil,
+                                                      duration: nil, artworkURL: nil)
+                      .hasUsableTitle ? Date() : nil)
     }
 
     /// Returns false (and changes nothing, in particular does not stamp

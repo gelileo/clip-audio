@@ -80,7 +80,23 @@ struct YtDlpStreamSource: StreamSource {
         }
         /// True when retrying will not help: the item is gone or blocked for
         /// this user. Transient problems (network, engine) are not definitive.
-        var isDefinitive: Bool { kind == .unavailable || kind == .region }
+        ///
+        /// Deliberately stricter than `kind`: this drives `markUnavailable`,
+        /// so a false positive hides a healthy item. Transient signals are
+        /// checked first and can never fall through to "definitive".
+        var isDefinitive: Bool {
+            guard stage == "EXTRACT" else { return false }
+            let d = detail.lowercased()
+            let transient = ["http error 5", "service unavailable", "timed out", "timeout",
+                             "urlopen", "temporarily", "connection", "network",
+                             "try again", "too many requests", "http error 429"]
+            if transient.contains(where: d.contains) { return false }
+            let definitive = ["video unavailable", "this video is unavailable", "is private",
+                              "private video", "not available in your country",
+                              "not available in your region", "in your country",
+                              "geo restrict", "geo-restrict"]
+            return definitive.contains(where: d.contains)
+        }
     }
 
     func resolve(_ sourceURL: String) async throws -> Track {

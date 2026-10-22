@@ -185,11 +185,14 @@ final class PlaylistStore: ObservableObject {
         scheduleSave()
     }
 
-    func resetMetadataAttempts(itemID: UUID, in playlistID: UUID) {
+    /// User-initiated retry: zero the attempts and clear `unavailable`, so a
+    /// false positive (or a link that came back) is recoverable.
+    func retryMetadata(itemID: UUID, in playlistID: UUID) {
         guard let p = playlists.firstIndex(where: { $0.id == playlistID }),
               let i = playlists[p].items.firstIndex(where: { $0.id == itemID })
         else { return }
         playlists[p].items[i].metadataAttempts = 0
+        playlists[p].items[i].unavailable = false
         scheduleSave()
     }
 

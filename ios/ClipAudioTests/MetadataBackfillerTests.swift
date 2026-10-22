@@ -173,7 +173,7 @@ struct MetadataBackfillerTests {
             store: store, source: StubSource(behavior: .succeed, delay: .milliseconds(30), log: log))
 
         bf.start(); bf.start(); bf.start()
-        #expect(bf.loopsStarted == 1)
+        #expect(bf.isRunning)
         try await waitUntil { store.itemsNeedingMetadata(limit: 1).isEmpty }
         #expect(log.all.count == 3)       // each item resolved exactly once
         try await waitUntil { !bf.isRunning }
@@ -212,7 +212,7 @@ struct MetadataBackfillerTests {
         try await Task.sleep(for: .milliseconds(30))
         bf.stop()
         bf.start()                                     // old loop still unwinding
-        #expect(bf.loopsStarted == 2)
+        #expect(bf.isRunning)
         try await Task.sleep(for: .milliseconds(300))  // old loop has finished by now
         #expect(bf.isRunning)                          // new loop's handle not erased
         bf.stop()
@@ -264,6 +264,13 @@ struct MetadataBackfillerTests {
         #expect(!e("BRIDGE", "boom").isDefinitive)
         #expect(!e("NO_COMPATIBLE_FORMAT", "x").isDefinitive)
         #expect(!e("EXTRACT", "something odd").isDefinitive)
+        // False positives that would permanently hide a healthy item.
+        #expect(!e("EXTRACT", "HTTP Error 503: Service Unavailable").isDefinitive)
+        #expect(!e("EXTRACT", "HTTP Error 500: Internal Server Error").isDefinitive)
+        #expect(!e("EXTRACT", "The read operation timed out").isDefinitive)
+        #expect(!e("EXTRACT", "<urlopen error [Errno 8] nodename nor servname>").isDefinitive)
+        #expect(!e("EXTRACT", "Unable to download webpage: Network is unavailable").isDefinitive)
+        #expect(!e("EXTRACT", "geo lookup failed").isDefinitive)
     }
 
     @Test("A resolve without a usable title is a failed attempt, even with other fields")
@@ -299,5 +306,36 @@ struct MetadataBackfillerTests {
             toItemID: added.id, in: p.id)
         #expect(!ok)
         #expect(!items(store, p)[0].hasMetadata)
+    }
+
+    @Test("Favouriting a track with a blank title does not mark it fetched")
+    func blankTitleTrackNotFetched() {
+        for title in ["", "  \n "] {
+            var t = Track(sourceURL: "https://x/1")
+            t.title = title
+            #expect(!PlaylistItem(from: t).hasMetadata)
+        }
+        var ok = Track(sourceURL: "https://x/1")
+        ok.title = "Real"
+        #expect(PlaylistItem(from: ok).hasMetadata)
+    }
+
+    @Test("retryMetadata clears unavailable and zeroes attempts")
+    func retryClearsUnavailable() throws {
+        let store = try makeStore()
+        let p = try store.createPlaylist(name: "Focus")
+        guard case let .added(item)? = store.add(sourceURL: "https://x/1", to: p.id) else {
+            Issue.record("expected .added"); return
+        }
+        store.recordMetadataFailure(itemID: item.id, in: p.id)
+        store.markUnavailable(itemID: item.id, in: p.id)
+        #expect(store.itemsNeedingMetadata(limit: 10).isEmpty)
+
+        store.retryMetadata(itemID: item.id, in: p.id)
+
+        let after = items(store, p)[0]
+        #expect(!after.unavailable)
+        #expect(after.metadataAttempts == 0)
+        #expect(store.itemsNeedingMetadata(limit: 10).count == 1)
     }
 }

@@ -20,8 +20,6 @@ final class MetadataBackfiller {
     /// resolve (and count an attempt for) the same item twice.
     private var inFlight: Set<UUID> = []
 
-    /// Number of loops actually created (observable for tests).
-    private(set) var loopsStarted = 0
     var isRunning: Bool { loop != nil }
 
     init(store: PlaylistStore, source: StreamSource) {
@@ -93,7 +91,6 @@ final class MetadataBackfiller {
         guard loop == nil else { return }
         let token = UUID()
         loopToken = token
-        loopsStarted += 1
         loop = Task { [weak self] in
             while !Task.isCancelled {
                 guard let self else { return }
