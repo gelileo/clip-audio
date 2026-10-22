@@ -19,6 +19,9 @@ enum PlaylistRowState: Equatable {
 }
 
 enum PlaylistEditing {
+    static func canSubmit(name: String) -> Bool {
+        !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
     static func canEdit(isReadOnly: Bool) -> Bool { !isReadOnly }
     static func canPlayAll(_ playlist: Playlist?) -> Bool { !(playlist?.items.isEmpty ?? true) }
 }

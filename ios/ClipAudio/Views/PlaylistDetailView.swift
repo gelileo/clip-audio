@@ -3,7 +3,7 @@ import SwiftUI
 struct PlaylistDetailView: View {
     let playlistID: UUID
     @EnvironmentObject private var store: PlaylistStore
-    @StateObject private var player = AudioPlayer.shared
+    @ObservedObject private var player = AudioPlayer.shared
 
     private var playlist: Playlist? { store.playlists.first { $0.id == playlistID } }
     private var canEdit: Bool { PlaylistEditing.canEdit(isReadOnly: store.isReadOnly) }
