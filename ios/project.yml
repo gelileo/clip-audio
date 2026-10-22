@@ -123,3 +123,32 @@ targets:
             find "$D" -name '__pycache__' -type d -prune -exec rm -rf {} + 2>/dev/null || true
           done
           echo "precompiled bundle: $(du -sh "$CODESIGNING_FOLDER_PATH" | cut -f1)"
+
+  ClipAudioTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: ClipAudioTests
+    dependencies:
+      - target: ClipAudio
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: "YES"
+        PRODUCT_BUNDLE_IDENTIFIER: stream.clipaudio.tests
+        # App-hosted: Task 5 exercises AudioPlayer, whose init activates
+        # AVAudioSession and registers MPRemoteCommandCenter targets. Those
+        # need a host app; a standalone bundle fails at runtime.
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/ClipAudio.app/ClipAudio"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+
+schemes:
+  ClipAudio:
+    build:
+      targets:
+        ClipAudio: all
+        ClipAudioTests: [test]
+    test:
+      targets:
+        - ClipAudioTests
+    run:
+      config: Debug
