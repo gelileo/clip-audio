@@ -9,3 +9,4 @@ ios/Local.xcconfig
 __pycache__/
 *.pyc
 ios/vendor/
+.superpowers/
